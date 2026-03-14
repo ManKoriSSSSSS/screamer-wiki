@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screamer Wiki | The Internet's Heart Attack Archive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f0f0f;
+            color: #e0e0e0;
+        }
+
+        .wiki-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .wiki-card:hover {
+            border-color: #ff4444;
+            transform: translateY(-2px);
+        }
+
+        .warning-glow {
+            text-shadow: 0 0 10px rgba(255, 68, 68, 0.5);
+        }
+
+        .glitch-text {
+            position: relative;
+        }
+
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 2px;
+            text-shadow: -1px 0 red;
+            top: 0;
+            color: #e0e0e0;
+            background: #0f0f0f;
+            overflow: hidden;
+            clip: rect(0, 900px, 0, 0);
+            animation: noise-anim 2s infinite linear alternate-reverse;
+        }
+
+        @keyframes noise-anim {
+            0% { clip: rect(41px, 9999px, 5px, 0); }
+            100% { clip: rect(81px, 9999px, 98px, 0); }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <!-- Header -->
+    <header class="max-w-6xl mx-auto mb-12 border-b border-gray-800 pb-8">
+        <div class="flex flex-col md:flex-row justify-between items-baseline gap-4">
+            <div>
+                <h1 class="text-5xl font-black tracking-tighter italic glitch-text" data-text="SCREAMER WIKI">SCREAMER WIKI</h1>
+                <p class="text-gray-500 mt-2 font-medium uppercase tracking-widest text-sm">Documenting the stuff that made us throw our laptops across the room since 2002.</p>
+            </div>
+            <nav class="flex gap-6 text-sm font-bold text-red-500">
+                <a href="#" class="hover:underline">RANDOM PAGE</a>
+                <a href="#" class="hover:underline">RECENT EDITS</a>
+                <a href="#" class="hover:underline">CONTRIBUTE</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Main Content -->
+        <div class="lg:col-span-2 space-y-8">
+            
+            <!-- Warning Box -->
+            <section class="bg-red-900/20 border-2 border-red-600 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold text-red-500 mb-3 flex items-center gap-2">
+                    <span>⚠️</span> YO, HEADS UP
+                </h2>
+                <p class="leading-relaxed">
+                    Look, if you have a heart condition, epilepsy, or you're just easily rattled, maybe don't click the links here. This wiki documents <strong>jumpscares</strong>, <strong>shock sites</strong>, and <strong>loud-ass videos</strong>. We try to label everything, but seriously, browse at your own risk. Don't blame us if you wake up your neighbors at 3 AM.
+                </p>
+            </section>
+
+            <!-- Featured Article -->
+            <section class="space-y-4">
+                <h2 class="text-3xl font-black uppercase tracking-tight">Classic Hall of Fame</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="wiki-card p-5 rounded-xl">
+                        <h3 class="text-xl font-bold text-white mb-2 underline decoration-red-600">The Scary Maze Game</h3>
+                        <p class="text-sm text-gray-400">The OG. Jeremy Winterrowd's masterpiece. If you haven't seen the Reagan girl pop up after Level 3, did you even grow up on the internet?</p>
+                    </div>
+                    <div class="wiki-card p-5 rounded-xl">
+                        <h3 class="text-xl font-bold text-white mb-2 underline decoration-red-600">The K-Fee Commercials</h3>
+                        <p class="text-sm text-gray-400">Just a peaceful car driving through the mountains... oh wait, there's a zombie screaming in my face. Classic German efficiency.</p>
+                    </div>
+                    <div class="wiki-card p-5 rounded-xl">
+                        <h3 class="text-xl font-bold text-white mb-2 underline decoration-red-600">Anne.jpg</h3>
+                        <p class="text-sm text-gray-400">A fake "find the difference" or "illusion" image that ends in a high-pitched screech and a face that haunts your dreams.</p>
+                    </div>
+                    <div class="wiki-card p-5 rounded-xl">
+                        <h3 class="text-xl font-bold text-white mb-2 underline decoration-red-600">Jingle Bells Reversed</h3>
+                        <p class="text-sm text-gray-400">"Listen for the demonic messages!" Nah, just listen for the sudden loud noise that ruins your hearing for a week.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Community Message -->
+            <section class="bg-[#1a1a1a] p-8 rounded-2xl border border-gray-800">
+                <h2 class="text-2xl font-bold mb-4 italic">"Why do we do this to ourselves?"</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    The Screamer Wiki is a community effort to archive the weird, loud, and annoying history of internet jumpscares. Whether it's a Flash game from 2005 or a TikTok "trick" video from yesterday, we want to document it so people know what they're getting into. 
+                </p>
+                <button class="bg-white text-black font-black px-6 py-2 rounded-full hover:bg-red-600 hover:text-white transition-colors">
+                    ADD A NEW SCREAMER
+                </button>
+            </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="space-y-8">
+            <!-- Search -->
+            <div class="bg-white p-1 rounded-full flex items-center px-4">
+                <input type="text" placeholder="Search for a nightmare..." class="bg-transparent text-black w-full p-2 outline-none font-medium">
+                <span class="text-gray-400 text-xl cursor-pointer">🔍</span>
+            </div>
+
+            <!-- Categories -->
+            <div class="wiki-card p-6 rounded-2xl">
+                <h3 class="text-xs font-black text-gray-500 uppercase tracking-widest mb-4">Categories</h3>
+                <ul class="space-y-3 font-bold">
+                    <li class="flex justify-between items-center group cursor-pointer">
+                        <span class="group-hover:text-red-500">Shock Sites</span>
+                        <span class="text-xs bg-gray-800 px-2 py-1 rounded">42</span>
+                    </li>
+                    <li class="flex justify-between items-center group cursor-pointer">
+                        <span class="group-hover:text-red-500">Flash Games</span>
+                        <span class="text-xs bg-gray-800 px-2 py-1 rounded">108</span>
+                    </li>
+                    <li class="flex justify-between items-center group cursor-pointer">
+                        <span class="group-hover:text-red-500">YouTube Baits</span>
+                        <span class="text-xs bg-gray-800 px-2 py-1 rounded">250+</span>
+                    </li>
+                    <li class="flex justify-between items-center group cursor-pointer">
+                        <span class="group-hover:text-red-500">Lost Media</span>
+                        <span class="text-xs bg-gray-800 px-2 py-1 rounded">15</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="space-y-4">
+                <h3 class="text-xs font-black text-gray-500 uppercase tracking-widest">Recent Chaos</h3>
+                <div class="text-sm space-y-4">
+                    <div class="border-l-2 border-red-600 pl-4">
+                        <p class="font-bold">xX_NoobMaster_Xx</p>
+                        <p class="text-gray-500">Edited "The Maze Game" (fixed dead link)</p>
+                    </div>
+                    <div class="border-l-2 border-gray-700 pl-4">
+                        <p class="font-bold">RetroLover99</p>
+                        <p class="text-gray-500">Added "Scary Pop Up 2024" to archive</p>
+                    </div>
+                    <div class="border-l-2 border-gray-700 pl-4">
+                        <p class="font-bold">Mod_Dave</p>
+                        <p class="text-gray-500">Deleted "Rickroll" (Not a screamer, guys.)</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="max-w-6xl mx-auto mt-20 border-t border-gray-800 pt-8 pb-12 text-center text-gray-600 text-xs">
+        <p>This site is not responsible for broken headphones, spilled drinks, or emotional trauma. <br> Powered by coffee and pure 2000s nostalgia.</p>
+    </footer>
+
+    <script>
+        // Subtle interaction for the "Search" to show it's active
+        const searchInput = document.querySelector('input');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.style.boxShadow = '0 0 15px rgba(255, 255, 255, 0.2)';
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.style.boxShadow = 'none';
+        });
+    </script>
+</body>
+</html>
